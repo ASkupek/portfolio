@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,31 +20,22 @@
 
   <body>
 
-    <header>
-      <div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-4 offset-md-1 py-4">
-              <ul class="list-unstyled">
-                <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
-                <li><a href="{% url 'allblogs' %}" class="text-white">Blog</a></li>
-                <li><a href="#" class="text-white">Twitter</a></li>
-              </ul>
-            </div>
-          </div>
+      <header>
+
+          <div class="navbar navbar-dark bg-dark shadow-sm">
+    
+          <a class="navbar-brand" href="{% url 'home' %}">Andraz Skupek</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a href="{% url 'home' %}" class="text-white nav-item nav-link active">Home</a>
+            <a href="{% url 'allblogs' %}" class="text-white nav-item nav-link">Blog</a>
+            <a href="{% static 'CV.pdf' %}" class="text-white nav-item nav-link">Resume</a>
         </div>
-      </div>
-      <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container d-flex justify-content-between">
-          <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
-            <strong>Andraz Skupek</strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
-    </header>
+      </div></div>
+        </header>
 
     <main role="main">
         <div class="container">
